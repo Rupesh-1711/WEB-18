@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <div id="container1">
+        <div><a href="backend.html">Backend</a></div>
+        <div><a href="frontend.html">Frontend</a></div>
+    </div>
+    <form id="frontForm">
+        <input id="name" type="text" placeholder="User name here">
+        <input  id="imgURL" type="text" placeholder="image URL here">
+        <input id="logo" type="text" placeholder="Company Logo here">
+        <input id="role" type="text"placeholder="Role here">
+        <input type="submit"/>
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#frontForm").addEventListener("submit",investFun)
+   // we have to store in arr of objects
+   var investarr = JSON.parse(localStorage.getItem("InvestData")) || []
+
+    function investFun(){
+        event.preventDefault();
+         var investObj ={
+             investName:frontForm.name.value,
+             investImage:frontForm.imgURL.value,
+             investLogo:frontForm.logo.value,
+             investRole:frontForm.role.value
+         }
+         investarr.push(investObj)
+        //  console.log(investarr)
+        localStorage.clear()
+         localStorage.setItem("InvestData",JSON.stringify(investarr))
+    } 
+</script>

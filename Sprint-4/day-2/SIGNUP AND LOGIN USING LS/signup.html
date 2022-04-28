@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        h1{
+           
+            font-size: 36px;
+            text-align: center;
+        }
+        h1+div{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 300px;
+            /* border: black solid 1px; */
+          margin: auto;
+          padding: 30px;
+            
+        }
+        button{
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #navbar{
+            display: flex;
+  justify-content: space-evenly;
+  padding: 1%;
+  box-shadow: 2px 2px 5px 5px rgb(235, 235, 235);
+        }
+          a{
+            text-decoration: none;
+            color:white;
+            background-color: rgb(63, 63, 163);
+                }
+
+                button{
+                    background-color: blue;
+                    border: 0px;
+                    padding: 5px  20px 5px 20px;
+                    border-radius: 5px;
+                    
+                }
+                input{
+                    width: 90%;
+                    padding: 10px;
+                }
+                #submit{
+                    display: block;
+                    /* align-items: center; */
+                    margin:auto; 
+                    margin-top: 10px;
+                }
+    </style>
+</head>
+<body>
+
+    <div id="navbar">
+        <div> <a href="signup.html">Sign Up</a></div>
+        <div><a href="login.html">Login IN</a></div>
+    </div>
+        <h1>Sign Up</h1>
+        
+        <div>
+            <h3>Full Name</h3>
+            <form id="form">
+                <input id="name" type="text" placeholder="Enter your full name">
+
+                <h3>Email</h3>
+                <input id="email" type="email" placeholder="Enter email">
+                <h3>Password</h3>
+                <input id="password" type="password" placeholder="Enter password">
+                <input type="submit" value="Sign Up" id="submit">
+                <!-- <button><a href="signup.html">Sign Up</a></button> -->
+            </form>
+  
+        </div>
+</body>
+</html>
+
+
+<script>
+document.querySelector("form").addEventListener("submit",SignUp)
+
+ 
+function signUp(){
+  event.preventDefault()
+  
+
+
+}
+
+
+</script>

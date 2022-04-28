@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+
+<script>
+  
+//   var investarr = JSON.parse(localStorage.getItem("investData"))
+  var investarr = JSON.parse(localStorage.getItem("InvestData"));
+    //  console.log(investarr);
+
+
+        investarr.forEach(function(ele){
+        var box= document.createElement("div")
+        
+         var img = document.createElement("img")
+          img.setAttribute("src",ele.investImage)
+         
+        var name = document.createElement("h3")
+        name.innerText = ele.investName
+
+        var position = document.createElement("p")
+        position.innerText = ele.investRole
+
+        var logo = document.createElement("img")
+        logo.setAttribute("src",ele.investLogo)
+
+        box.append(img,name,position,logo)
+       document.querySelector("#container").append(box)
+       localStorage.clear()
+    })
+    localStorage.clear()
+</script>
