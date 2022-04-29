@@ -67,7 +67,6 @@
             <h3>Full Name</h3>
             <form id="form">
                 <input id="name" type="text" placeholder="Enter your full name">
-
                 <h3>Email</h3>
                 <input id="email" type="email" placeholder="Enter email">
                 <h3>Password</h3>
@@ -82,15 +81,39 @@
 
 
 <script>
-document.querySelector("form").addEventListener("submit",SignUp)
+//     var user = JSON.parse(localStorage.getItem("loclStore"))||[]
+// document.querySelector("form").addEventListener("submit",signUp)
 
  
-function signUp(){
-  event.preventDefault()
+// function signUp(){
+//   event.preventDefault()
   
+//    var objInfo = {
+//        name:form.name.value,
+//        email:form.email.value,
+//        password:form.password.value
 
+//    }
+//   user.push(objInfo)
+//   console.log(user);
+  
+//   localStorage.setItem("localStore",JSON.stringify(user))
+// }
+   document.querySelector("form").addEventListener("submit",signup)
+       var userData = JSON.parse(localStorage.getItem("usreCredets")) || [];
+   function signup()
+   {
+       event.preventDefault()
 
-}
+       var objInfo ={
+           userName:form.name.value,
+           userEmail:form.email.value,
+           userPassword:form.password.value,
+       }
 
+       userData.push(objInfo)
+       localStorage.setItem("usreCredets",JSON.stringify(userData))
+       document.querySelector("form").reset();
+   }
 
 </script>
