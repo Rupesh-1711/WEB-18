@@ -116,16 +116,14 @@ function loginInfo(){
     var pass = document.querySelector("#password").value
      
     var isTrue = false;
-    for(var i=0; i<regdUsers.length;i++)
-    {
-        console.log(regdUsers[i].email)
-        if(regdUsers[i].userEmail == email && regdUsers[i].userPassword== pass)
+    regdUsers.forEach(function(ele){
+        if(ele.userEmail==email && ele.userPassword)
         {
-            istrue = true;
-            alert("Login Successful")
-            break
+            alert("login Successfull")
+            isTrue = true
+            return
         }
-    }
+    })
     if(isTrue==false)
     {
         alert("login failed")
